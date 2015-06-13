@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
-                <viewController id="vXZ-lx-hvc" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="vXZ-lx-hvc" customClass="ViewController" customModule="ColorMaker_Sliders" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
                         <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
@@ -15,8 +16,119 @@
                     <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <subviews>
+                            <slider opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="N6E-Bh-Uav">
+                                <rect key="frame" x="291" y="63" width="118" height="31"/>
+                                <color key="minimumTrackTintColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <connections>
+                                    <action selector="colorSliderChanged:" destination="vXZ-lx-hvc" eventType="valueChanged" id="4g2-kq-2Tn"/>
+                                </connections>
+                            </slider>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Red" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sv7-kr-6bU">
+                                <rect key="frame" x="193" y="68" width="39" height="20"/>
+                                <fontDescription key="fontDescription" name="STHeitiSC-Medium" family="Heiti SC" pointSize="20"/>
+                                <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <slider opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="VTP-PF-tvJ">
+                                <rect key="frame" x="291" y="129" width="118" height="31"/>
+                                <color key="minimumTrackTintColor" red="0.25098040700000002" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <connections>
+                                    <action selector="colorSliderChanged:" destination="vXZ-lx-hvc" eventType="valueChanged" id="Shf-Q5-D2N"/>
+                                </connections>
+                            </slider>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Green" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BA1-DN-E9e">
+                                <rect key="frame" x="193" y="133" width="62" height="20"/>
+                                <fontDescription key="fontDescription" name="STHeitiSC-Medium" family="Heiti SC" pointSize="20"/>
+                                <color key="textColor" red="0.0" green="0.50196081399917603" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <slider opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="qn9-eH-Tsl">
+                                <rect key="frame" x="291" y="192" width="118" height="31"/>
+                                <color key="minimumTrackTintColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <connections>
+                                    <action selector="colorSliderChanged:" destination="vXZ-lx-hvc" eventType="valueChanged" id="K2j-fD-aba"/>
+                                </connections>
+                            </slider>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Blue" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bwE-yw-x1H">
+                                <rect key="frame" x="193" y="196" width="41" height="20"/>
+                                <fontDescription key="fontDescription" name="STHeitiSC-Medium" family="Heiti SC" pointSize="20"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IDM-aj-M7r">
+                                <rect key="frame" x="193" y="272" width="214" height="214"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="61p-7a-480">
+                                        <rect key="frame" x="8" y="8" width="198" height="198"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="198" id="2Ro-Zh-jmK"/>
+                                            <constraint firstAttribute="height" constant="198" id="Hh6-jt-sQq"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="214" id="1RO-Vd-683"/>
+                                    <constraint firstAttribute="centerX" secondItem="61p-7a-480" secondAttribute="centerX" id="1mu-zk-Qtz"/>
+                                    <constraint firstAttribute="centerY" secondItem="61p-7a-480" secondAttribute="centerY" id="J80-qP-Wqk"/>
+                                    <constraint firstAttribute="width" constant="214" id="oSY-6Y-UrW"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="N6E-Bh-Uav" firstAttribute="leading" secondItem="sv7-kr-6bU" secondAttribute="trailing" constant="61" id="0RP-FH-969"/>
+                            <constraint firstItem="N6E-Bh-Uav" firstAttribute="leading" secondItem="sv7-kr-6bU" secondAttribute="trailing" constant="61" id="1bN-ns-Hdo"/>
+                            <constraint firstItem="VTP-PF-tvJ" firstAttribute="leading" secondItem="BA1-DN-E9e" secondAttribute="trailing" constant="38" id="5HD-gs-uet"/>
+                            <constraint firstAttribute="centerX" secondItem="IDM-aj-M7r" secondAttribute="centerX" id="66v-cY-8Sg"/>
+                            <constraint firstItem="IDM-aj-M7r" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="177" id="9YP-TS-XvR"/>
+                            <constraint firstItem="VTP-PF-tvJ" firstAttribute="top" secondItem="N6E-Bh-Uav" secondAttribute="bottom" constant="36" id="Cgu-gC-z6s"/>
+                            <constraint firstAttribute="centerX" secondItem="IDM-aj-M7r" secondAttribute="centerX" id="K21-fn-lcI"/>
+                            <constraint firstItem="qn9-eH-Tsl" firstAttribute="centerY" secondItem="bwE-yw-x1H" secondAttribute="centerY" constant="1" id="LLb-Qb-F3u"/>
+                            <constraint firstAttribute="centerY" secondItem="IDM-aj-M7r" secondAttribute="centerY" constant="-71" id="O22-fg-Z0R"/>
+                            <constraint firstItem="qn9-eH-Tsl" firstAttribute="leading" secondItem="bwE-yw-x1H" secondAttribute="trailing" constant="59" id="QQk-kJ-Ctv"/>
+                            <constraint firstItem="bwE-yw-x1H" firstAttribute="top" secondItem="BA1-DN-E9e" secondAttribute="bottom" constant="45" id="VTW-Nj-SKB"/>
+                            <constraint firstItem="bwE-yw-x1H" firstAttribute="leading" secondItem="BA1-DN-E9e" secondAttribute="leading" id="b9c-Ny-W0c"/>
+                            <constraint firstItem="BA1-DN-E9e" firstAttribute="top" secondItem="sv7-kr-6bU" secondAttribute="bottom" constant="45" id="bqg-9P-M6A"/>
+                            <constraint firstItem="qn9-eH-Tsl" firstAttribute="top" secondItem="VTP-PF-tvJ" secondAttribute="bottom" constant="33" id="br5-UI-O2z"/>
+                            <constraint firstItem="VTP-PF-tvJ" firstAttribute="top" secondItem="N6E-Bh-Uav" secondAttribute="bottom" constant="36" id="cBT-uG-nis"/>
+                            <constraint firstAttribute="centerX" secondItem="IDM-aj-M7r" secondAttribute="centerX" id="d77-cq-ODH"/>
+                            <constraint firstItem="VTP-PF-tvJ" firstAttribute="trailing" secondItem="qn9-eH-Tsl" secondAttribute="trailing" id="eBx-JJ-57L"/>
+                            <constraint firstItem="sv7-kr-6bU" firstAttribute="leading" secondItem="BA1-DN-E9e" secondAttribute="leading" id="kcw-Dg-aCI"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="IDM-aj-M7r" secondAttribute="trailing" constant="177" id="kha-f2-het"/>
+                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="IDM-aj-M7r" secondAttribute="bottom" constant="114" id="n1J-gH-n9g"/>
+                            <constraint firstItem="qn9-eH-Tsl" firstAttribute="trailing" secondItem="IDM-aj-M7r" secondAttribute="trailing" id="o55-Ff-rxz"/>
+                            <constraint firstItem="N6E-Bh-Uav" firstAttribute="centerX" secondItem="VTP-PF-tvJ" secondAttribute="centerX" id="pgl-Xq-9pC"/>
+                            <constraint firstItem="N6E-Bh-Uav" firstAttribute="trailing" secondItem="VTP-PF-tvJ" secondAttribute="trailing" id="qK6-bR-wgh"/>
+                            <constraint firstItem="bwE-yw-x1H" firstAttribute="top" secondItem="BA1-DN-E9e" secondAttribute="bottom" constant="43" id="s9a-Fx-8Dh"/>
+                            <constraint firstItem="BA1-DN-E9e" firstAttribute="top" secondItem="sv7-kr-6bU" secondAttribute="bottom" constant="45" id="sXW-fX-5QK"/>
+                            <constraint firstItem="IDM-aj-M7r" firstAttribute="top" secondItem="bwE-yw-x1H" secondAttribute="bottom" constant="56" id="tKX-Ti-E5y"/>
+                            <constraint firstItem="bwE-yw-x1H" firstAttribute="leading" secondItem="IDM-aj-M7r" secondAttribute="leading" id="xcH-Bq-ya2"/>
+                            <constraint firstItem="sv7-kr-6bU" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="48" id="xva-K9-m8c"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="xva-K9-m8c"/>
+                                <exclude reference="sXW-fX-5QK"/>
+                                <exclude reference="VTW-Nj-SKB"/>
+                                <exclude reference="0RP-FH-969"/>
+                                <exclude reference="qK6-bR-wgh"/>
+                                <exclude reference="Cgu-gC-z6s"/>
+                                <exclude reference="66v-cY-8Sg"/>
+                                <exclude reference="9YP-TS-XvR"/>
+                                <exclude reference="K21-fn-lcI"/>
+                                <exclude reference="O22-fg-Z0R"/>
+                                <exclude reference="kha-f2-het"/>
+                            </mask>
+                        </variation>
                     </view>
+                    <connections>
+                        <outlet property="blueColorSlider" destination="qn9-eH-Tsl" id="lxh-0R-mAo"/>
+                        <outlet property="colorView" destination="61p-7a-480" id="UhE-HF-e8x"/>
+                        <outlet property="greenColorSlider" destination="VTP-PF-tvJ" id="AUm-ze-cuf"/>
+                        <outlet property="redColorSlider" destination="N6E-Bh-Uav" id="XAL-s6-oiJ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
